@@ -1,14 +1,14 @@
 Class {
-	#name : 'RaylibRay',
+	#name : 'RaylibShader',
 	#superclass : 'FFIStructure',
 	#category : 'RayLib',
 	#package : 'RayLib'
 }
 
 { #category : 'field definition' }
-RaylibRay class >> fieldsDesc [
+RaylibShader class >> fieldsDesc [
 	^#(
-	Vector3 position;       
-    Vector3 direction;
+	unsigned int id;       
+    int *locs;  
 	)
 ]

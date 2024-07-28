@@ -1,6 +1,6 @@
 Class {
-	#name : #RaylibConstants,
-	#superclass : #SharedPool,
+	#name : 'RaylibConstants',
+	#superclass : 'SharedPool',
 	#classVars : [
 		'BEIGE',
 		'BLACK',
@@ -15,18 +15,6 @@ Class {
 		'GOLD',
 		'GRAY',
 		'GREEN',
-		'KEY_A',
-		'KEY_BACKSPACE',
-		'KEY_DELETE',
-		'KEY_ENTER',
-		'KEY_ESCAPE',
-		'KEY_INSERT',
-		'KEY_LEFT',
-		'KEY_R',
-		'KEY_RIGHT',
-		'KEY_S',
-		'KEY_SPACE',
-		'KEY_TAB',
 		'LIGHTGRAY',
 		'LIME',
 		'MAGENTA',
@@ -51,10 +39,11 @@ Class {
 		'WHITE',
 		'YELLOW'
 	],
-	#category : #RayLib
+	#category : 'RayLib',
+	#package : 'RayLib'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 RaylibConstants class >> initialize [
 	 MOUSE_BUTTON_LEFT    := 0.       
     MOUSE_BUTTON_RIGHT   := 1.       
@@ -64,20 +53,8 @@ RaylibConstants class >> initialize [
     MOUSE_BUTTON_FORWARD := 5.       
     MOUSE_BUTTON_BACK    := 6.  
 
-	 KEY_SPACE           := 32 .    
-    KEY_ESCAPE          := 25     .
-    KEY_ENTER           := 257  .  
-    KEY_TAB             := 258    . 
-    KEY_BACKSPACE       := 259    . 
-    KEY_INSERT          := 260     .
-    KEY_DELETE          := 261    . 
-    KEY_RIGHT           := 262     . 
-	KEY_LEFT := 263.
-	
-	
-	KEY_A               := 65.
-	KEY_S 			  := 83.
-	KEY_R 			  := 82.
+
+
 
 	"colors"
 	WHITE := RaylibColor new r: 255; g: 255; b: 255; a: 255; yourself.
@@ -103,5 +80,5 @@ RaylibConstants class >> initialize [
 	DARKBROWN := RaylibColor new r: 76; g: 63; b: 47; a: 255; yourself.
 	MAGENTA := RaylibColor new r: 255; g: 0; b: 255; a: 255; yourself.
 	ORANGE := RaylibColor new r: 255; g: 161; b: 0; a: 255; yourself.
-	BLACK := RaylibColor new r: 0; g: 0; b: 0; a: 255; yourself.
+	
 ]

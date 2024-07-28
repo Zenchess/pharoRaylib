@@ -1,19 +1,15 @@
 Class {
-	#name : #RaylibTransform,
-	#superclass : #FFIStructure,
-	#classVars : [
-		'OFFSET_ROTATION',
-		'OFFSET_SCALE',
-		'OFFSET_TRANSLATION'
-	],
-	#category : #RayLib
+	#name : 'RaylibTransform',
+	#superclass : 'FFIStructure',
+	#category : 'RayLib',
+	#package : 'RayLib'
 }
 
-{ #category : #'field definition' }
-RaylibTransform class >> fieldsDesc [ 
+{ #category : 'field definition' }
+RaylibTransform class >> fieldsDesc [
 	^ #(
-	 Vector3 translation;
-    Vector4 rotation;
-	 Vector3 scale;
-	)
+			Vector3 translation;   
+    Vector4 rotation;    
+    Vector3 scale; 
+		)
 ]

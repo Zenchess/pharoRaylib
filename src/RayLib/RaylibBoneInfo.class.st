@@ -1,14 +1,14 @@
 Class {
-	#name : 'RaylibRay',
+	#name : 'RaylibBoneInfo',
 	#superclass : 'FFIStructure',
 	#category : 'RayLib',
 	#package : 'RayLib'
 }
 
 { #category : 'field definition' }
-RaylibRay class >> fieldsDesc [
+RaylibBoneInfo class >> fieldsDesc [
 	^#(
-	Vector3 position;       
-    Vector3 direction;
+		 char name[32];         
+    int parent;   
 	)
 ]

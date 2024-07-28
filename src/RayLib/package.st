@@ -1,1 +1,1 @@
-Package { #name : #RayLib }
+Package { #name : 'RayLib' }

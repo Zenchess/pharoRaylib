@@ -1,14 +1,14 @@
 Class {
-	#name : 'RaylibRay',
+	#name : 'RaylibBoundingBox',
 	#superclass : 'FFIStructure',
 	#category : 'RayLib',
 	#package : 'RayLib'
 }
 
 { #category : 'field definition' }
-RaylibRay class >> fieldsDesc [
+RaylibBoundingBox class >> fieldsDesc [
 	^#(
-	Vector3 position;       
-    Vector3 direction;
+		 Vector3 min;           
+    Vector3 max;
 	)
 ]
