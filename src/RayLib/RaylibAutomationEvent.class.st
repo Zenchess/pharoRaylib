@@ -1,10 +1,10 @@
 Class {
-	#name : 'RaylibMaterial',
+	#name : 'RaylibAutomationEvent',
 	#superclass : 'FFIStructure',
 	#classVars : [
-		'OFFSET_MAPS',
+		'OFFSET_FRAME',
 		'OFFSET_PARAMS',
-		'OFFSET_SHADER'
+		'OFFSET_TYPE'
 	],
 	#pools : [
 		'RaylibTypes'
@@ -14,46 +14,46 @@ Class {
 }
 
 { #category : 'field definition' }
-RaylibMaterial class >> fieldsDesc [
+RaylibAutomationEvent class >> fieldsDesc [
 	^#(
-	 RaylibShader shader;         
-    RaylibMaterialMap *maps;     
-    float4Array params;  
+	 uint32 frame;            
+    uint32 type;              
+    int4Array params; 
 	)
 ]
 
 { #category : 'accessing - structure variables' }
-RaylibMaterial >> maps [
+RaylibAutomationEvent >> frame [
 	"This method was automatically generated"
-	^RaylibMaterialMap fromHandle: (handle pointerAt: OFFSET_MAPS)
+	^handle unsignedLongAt: OFFSET_FRAME
 ]
 
 { #category : 'accessing - structure variables' }
-RaylibMaterial >> maps: anObject [
+RaylibAutomationEvent >> frame: anObject [
 	"This method was automatically generated"
-	handle pointerAt: OFFSET_MAPS put: anObject getHandle.
+	handle unsignedLongAt: OFFSET_FRAME put: anObject
 ]
 
 { #category : 'accessing - structure variables' }
-RaylibMaterial >> params [
+RaylibAutomationEvent >> params [
 	"This method was automatically generated"
-	^(FFITypeArray ofType: #FFIFloat32 size: 4) fromHandle: (handle copyFrom: OFFSET_PARAMS to: OFFSET_PARAMS + 15)
+	^(FFITypeArray ofType: #FFIInt32 size: 4) fromHandle: (handle copyFrom: OFFSET_PARAMS to: OFFSET_PARAMS + 15)
 ]
 
 { #category : 'accessing - structure variables' }
-RaylibMaterial >> params: anObject [
+RaylibAutomationEvent >> params: anObject [
 	"This method was automatically generated"
 	handle replaceFrom: OFFSET_PARAMS to: OFFSET_PARAMS + 15 with: anObject getHandle startingAt: 1
 ]
 
 { #category : 'accessing - structure variables' }
-RaylibMaterial >> shader [
+RaylibAutomationEvent >> type [
 	"This method was automatically generated"
-	^ RaylibShader fromHandle: (handle referenceStructAt: OFFSET_SHADER length: RaylibShader byteSize)
+	^handle unsignedLongAt: OFFSET_TYPE
 ]
 
 { #category : 'accessing - structure variables' }
-RaylibMaterial >> shader: anObject [
+RaylibAutomationEvent >> type: anObject [
 	"This method was automatically generated"
-	handle structAt: OFFSET_SHADER put: anObject getHandle length: RaylibShader byteSize
+	handle unsignedLongAt: OFFSET_TYPE put: anObject
 ]

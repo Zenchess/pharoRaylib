@@ -10,24 +10,18 @@ RaylibMesh class >> fieldsDesc [
 	^ #(
 			int vertexCount;       
     int triangleCount;      
-
-    // Vertex attributes data
     float *vertices;        
     float *texcoords;       
     float *texcoords2;     
     float *normals;         
     float *tangents;       
-    unsigned char *colors;     
-    unsigned short *indices;    
-
-   
+    unsignedChar *colors;     
+    ushort *indices;    
     float *animVertices;    
     float *animNormals;     
-    unsigned char *boneIds; 
+    unsignedChar *boneIds; 
     float *boneWeights;     
-
-    // OpenGL identifiers
-    unsigned int vaoId;    
-    unsigned int *vboId;  
+    uint32 vaoId;    
+    uint32 *vboId;  
 		)
 ]

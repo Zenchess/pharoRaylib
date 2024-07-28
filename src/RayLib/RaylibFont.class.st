@@ -11,7 +11,7 @@ RaylibFont class >> fieldsDesc [
 			int baseSize;          
     int glyphCount;         
     int glyphPadding;       
-    RaylibTexture2D texture;     
+    RaylibTexture texture;     
     RaylibRectangle *recs;        
     RaylibGlyphInfo *glyphs;     
 		)

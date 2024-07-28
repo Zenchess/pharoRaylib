@@ -1,6 +1,10 @@
 Class {
 	#name : 'RaylibShader',
 	#superclass : 'FFIStructure',
+	#classVars : [
+		'OFFSET_ID',
+		'OFFSET_LOCS'
+	],
 	#category : 'RayLib',
 	#package : 'RayLib'
 }
@@ -8,7 +12,7 @@ Class {
 { #category : 'field definition' }
 RaylibShader class >> fieldsDesc [
 	^#(
-	unsigned int id;       
+	uint32 id;       
     int *locs;  
 	)
 ]

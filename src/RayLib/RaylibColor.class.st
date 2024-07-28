@@ -1,6 +1,12 @@
 Class {
 	#name : 'RaylibColor',
 	#superclass : 'FFIStructure',
+	#classVars : [
+		'OFFSET_A',
+		'OFFSET_B',
+		'OFFSET_G',
+		'OFFSET_R'
+	],
 	#category : 'RayLib',
 	#package : 'RayLib'
 }
@@ -8,10 +14,10 @@ Class {
 { #category : 'field definition' }
 RaylibColor class >> fieldsDesc [
 ^ #(
-	 unsigned char r;        
-    unsigned char g;        
-    unsigned char b;        
-    unsigned char a;        
+	 unsignedChar r;        
+    unsignedChar g;        
+    unsignedChar b;        
+    unsignedChar a;        
 )
 
 ]

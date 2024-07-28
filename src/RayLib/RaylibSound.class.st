@@ -1,14 +1,14 @@
 Class {
-	#name : 'RaylibBoneInfo',
+	#name : 'RaylibSound',
 	#superclass : 'FFIStructure',
 	#category : 'RayLib',
 	#package : 'RayLib'
 }
 
 { #category : 'field definition' }
-RaylibBoneInfo class >> fieldsDesc [
+RaylibSound class >> fieldsDesc [
 	^#(
-		 char32Array name;         
-    int parent;   
+		RaylibAudioStream stream;
+		uint32 frameCount;
 	)
 ]

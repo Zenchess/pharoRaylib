@@ -8,10 +8,10 @@ Class {
 { #category : 'field definition' }
 RaylibWave class >> fieldsDesc [
 	^#(
-		unsigned int frameCount;    
-    unsigned int sampleRate;    
-    unsigned int sampleSize;    
-    unsigned int channels;      
+		uint32 frameCount;    
+    uint32 sampleRate;    
+    uint32 sampleSize;    
+    uint32 channels;      
     void *data; 
 	)
 ]

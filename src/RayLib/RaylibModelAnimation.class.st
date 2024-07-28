@@ -12,6 +12,6 @@ RaylibModelAnimation class >> fieldsDesc [
     int frameCount;         
     RaylibBoneInfo *bones;       
     RaylibTransform **framePoses; 
-    char name[32];   
+    char32Array name;   
 	)
 ]
