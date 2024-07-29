@@ -2,8 +2,7 @@
 Pharo Smalltalk bindings for Raylib game library
 
 # Update: 
-All methods defined, but need to change unsigned int and related code to stuff
-like "uint32".  Should have it working tonight.  Basic window example works.  
+Everything should theoretically work.  
 
 Currently working on implementing some examples.  But basically you should be able 
 to create a new instance of FFIRaylib and send it Raylib method calls.  Follow
