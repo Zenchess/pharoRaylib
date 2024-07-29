@@ -2,13 +2,8 @@
 Pharo Smalltalk bindings for Raylib game library
 
 # Update: 
-Everything should theoretically work. All raylib methods on the raylib cheatsheet are implemented,
-all constants implemented, and all structures are implemented.  Let me know if there's any issues. 
+Everything is almost working, however some calls to RaylibTexture2D need to be renamed to RaylibTexture.   
 
-Currently working on implementing some examples.  But basically you should be able 
-to create a new instance of FFIRaylib and send it Raylib method calls.  Follow
-a tutorial or example from the main page and just call the same methods in the same
-order. 
 
 # Constants
   Add SharedPool #RaylibConstants to your game class to use constants like MOUSE_BUTTON_MIDDLE, etc. 
@@ -28,11 +23,17 @@ order.
   
   Clone the repo with iceberg or 'browse git repositories' in Pharo and load the code.  
 
+# BunnyMark
+	To run BunnyMarkDemo, copy 'resources' to your pharo folder: for instance: ./resources
+	Go to class side and there are methods such as startDemoWindowed and startDemoFullscreen.  
+
+
   # Todo:
    Implement examples and demo projects to demonstrate usage of the library.  This will be done soon, probably today. 
    Write custom wrapper methods to give it a more smalltalk feel, this is a more long term project.  For now, you need
    to call the dll methods directly. 
 
    # Benchmarks: 
-   	Stay tuned later today for comparisons between DolphinRaylib and PharoRaylib using the BunnyMark demo, which spawns
-    thousands of bunny sprites that move around the screen.  On dolphin, I get something like 100 fps after 20,000 bunnies.
+    BunnyMark startDemoWindowed
+   	Dolphin Smalltalk @ 20,000 bunnies: 80 fps.  
+	Pharo 12 @ 20,000 bunnies: 150 fps.  It also creates the bunnies faster with the same smalltalk code.
