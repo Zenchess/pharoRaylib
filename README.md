@@ -2,7 +2,8 @@
 Pharo Smalltalk bindings for Raylib game library
 
 # Update: 
-Everything should theoretically work.  
+Everything should theoretically work. All raylib methods on the raylib cheatsheet are implemented,
+all constants implemented, and all structures are implemented.  Let me know if there's any issues. 
 
 Currently working on implementing some examples.  But basically you should be able 
 to create a new instance of FFIRaylib and send it Raylib method calls.  Follow
