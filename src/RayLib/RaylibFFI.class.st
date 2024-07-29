@@ -142,7 +142,7 @@ RaylibFFI >> clearBackground: raylibColor [
 
 { #category : 'rcore' }
 RaylibFFI >> clearWindowState: intFlags [
-	self ffiCall: #( bool ClearWindowState(unsigned int intFlags) ) library: RaylibLibrary.
+	self ffiCall: #( bool ClearWindowState(uint32 intFlags) ) library: RaylibLibrary.
 ]
 
 { #category : 'rcore' }
@@ -224,19 +224,19 @@ RaylibFFI >> colorToInt: color [
 
 { #category : 'rcore' }
 RaylibFFI >> compressData: data dataSize: dataSize compDataSize: compDataSize [
-    ^self ffiCall: #( unsigned char* CompressData(const unsigned char *data, int dataSize, int *compDataSize) ) library: RaylibLibrary.
+    ^self ffiCall: #( unsigned char* CompressData(const uchar *data, int dataSize, int *compDataSize) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> decodeDataBase64: data outputSize: outputSize [
-    ^self ffiCall: #( unsigned char* DecodeDataBase64(const unsigned char *data, int *outputSize) ) library: RaylibLibrary.
+    ^self ffiCall: #( unsigned char* DecodeDataBase64(const uchar *data, int *outputSize) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> decompressData: compData compDataSize: compDataSize dataSize: dataSize [
-    ^self ffiCall: #( unsigned char* DecompressData(const unsigned char *compData, int compDataSize, int *dataSize) ) library: RaylibLibrary.
+    ^self ffiCall: #( unsigned char* DecompressData(const uchar *compData, int compDataSize, int *dataSize) ) library: RaylibLibrary.
 
 ]
 
@@ -889,7 +889,7 @@ RaylibFFI >> exportImageAsCode: image fileName: fileName [
 
 { #category : 'rcore' }
 RaylibFFI >> exportImageToMemory: image fileType: fileType fileSize: fileSize [
-    ^self ffiCall: #( unsigned char* ExportImageToMemory(RaylibImage image, const char *fileType, int *fileSize) ) library: RaylibLibrary.
+    ^self ffiCall: #( uchar* ExportImageToMemory(RaylibImage image, const char *fileType, int *fileSize) ) library: RaylibLibrary.
 
 ]
 
@@ -1120,7 +1120,7 @@ RaylibFFI >> getCollisionRec: rec1 rec2: rec2 [
 
 { #category : 'rcore' }
 RaylibFFI >> getColor: hexValue [
-    ^self ffiCall: #( RaylibColor GetColor(unsigned int hexValue) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibColor GetColor(uint32 hexValue) ) library: RaylibLibrary.
 
 ]
 
@@ -2128,7 +2128,7 @@ RaylibFFI >> isWindowState: intFlag [
 
 { #category : 'rcore' }
 RaylibFFI >> loadAudioStream: sampleRate sampleSize: sampleSize channels: channels [
-    ^self ffiCall: #( RaylibAudioStream LoadAudioStream(unsigned int sampleRate, unsigned int sampleSize, unsigned int channels) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibAudioStream LoadAudioStream(uint32 sampleRate, uint32 sampleSize, uint32 channels) ) library: RaylibLibrary.
 
 ]
 
@@ -2182,7 +2182,7 @@ RaylibFFI >> loadFont: fileName [
 
 { #category : 'rcore' }
 RaylibFFI >> loadFontData: fileData dataSize: dataSize fontSize: fontSize codepoints: codepoints codepointCount: codepointCount type: type [
-    ^self ffiCall: #( RaylibGlyphInfo* LoadFontData(const unsigned char *fileData, int dataSize, int fontSize, int *codepoints, int codepointCount, int type) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibGlyphInfo* LoadFontData(const uchar *fileData, int dataSize, int fontSize, int *codepoints, int codepointCount, int type) ) library: RaylibLibrary.
 
 ]
 
@@ -2200,7 +2200,7 @@ RaylibFFI >> loadFontFromImage: image key: key firstChar: firstChar [
 
 { #category : 'rcore' }
 RaylibFFI >> loadFontFromMemory: fileType fileData: fileData dataSize: dataSize fontSize: fontSize codepoints: codepoints codepointCount: codepointCount [
-    ^self ffiCall: #( RaylibFont LoadFontFromMemory(const char *fileType, const unsigned char *fileData, int dataSize, int fontSize, int *codepoints, int codepointCount) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibFont LoadFontFromMemory(const char *fileType, const uchar *fileData, int dataSize, int fontSize, int *codepoints, int codepointCount) ) library: RaylibLibrary.
 
 ]
 
@@ -2224,7 +2224,7 @@ RaylibFFI >> loadImageColors: image [
 
 { #category : 'rcore' }
 RaylibFFI >> loadImageFromMemory: fileType fileData: fileData dataSize: dataSize [
-    ^self ffiCall: #( RaylibImage LoadImageFromMemory(const char *fileType, const unsigned char *fileData, int dataSize) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibImage LoadImageFromMemory(const char *fileType, const uchar *fileData, int dataSize) ) library: RaylibLibrary.
 
 ]
 
@@ -2296,13 +2296,13 @@ RaylibFFI >> loadMusicStream: fileName [
 
 { #category : 'rcore' }
 RaylibFFI >> loadMusicStreamFromMemory: fileType data: data dataSize: dataSize [
-    ^self ffiCall: #( RaylibMusic LoadMusicStreamFromMemory(const char *fileType, const unsigned char *data, int dataSize) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibMusic LoadMusicStreamFromMemory(const char *fileType, const uchar *data, int dataSize) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> loadRandomSequence: intCount min: intMin max: intMax [
-	self ffiCall: #( int *LoadRandomSequence(unsigned int intCount, int intMin, int intMax) ) library: RaylibLibrary.
+	self ffiCall: #( int *LoadRandomSequence(uint32 intCount, int intMin, int intMax) ) library: RaylibLibrary.
 ]
 
 { #category : 'rcore' }
@@ -2376,7 +2376,7 @@ RaylibFFI >> loadWave: fileName [
 
 { #category : 'rcore' }
 RaylibFFI >> loadWaveFromMemory: fileType fileData: fileData dataSize: dataSize [
-    ^self ffiCall: #( RaylibWave LoadWaveFromMemory(const char *fileType, const unsigned char *fileData, int dataSize) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibWave LoadWaveFromMemory(const char *fileType, const uchar *fileData, int dataSize) ) library: RaylibLibrary.
 
 ]
 
@@ -2405,7 +2405,7 @@ RaylibFFI >> measureTextEx: font text: text fontSize: fontSize spacing: spacing 
 
 { #category : 'rcore' }
 RaylibFFI >> memAlloc: size [
-    ^self ffiCall: #( void* MemAlloc(unsigned int size) ) library: RaylibLibrary.
+    ^self ffiCall: #( void* MemAlloc(uint32 size) ) library: RaylibLibrary.
 
 ]
 
@@ -2417,7 +2417,7 @@ RaylibFFI >> memFree: ptr [
 
 { #category : 'rcore' }
 RaylibFFI >> memRealloc: ptr size: size [
-    ^self ffiCall: #( void* MemRealloc(void *ptr, unsigned int size) ) library: RaylibLibrary.
+    ^self ffiCall: #( void* MemRealloc(void *ptr, uint32 size) ) library: RaylibLibrary.
 
 ]
 
@@ -2575,7 +2575,7 @@ RaylibFFI >> setClipboardText: stringText [
 
 { #category : 'rcore' }
 RaylibFFI >> setConfigFlags: flags [
-    self ffiCall: #( void SetConfigFlags(unsigned int flags) ) library: RaylibLibrary.
+    self ffiCall: #( void SetConfigFlags(uint32 flags) ) library: RaylibLibrary.
 
 
 ]
@@ -2594,7 +2594,7 @@ RaylibFFI >> setGamepadMappings: mappings [
 
 { #category : 'rcore' }
 RaylibFFI >> setGesturesEnabled: flags [
-    self ffiCall: #( void SetGesturesEnabled(unsigned int flags) ) library: RaylibLibrary.
+    self ffiCall: #( void SetGesturesEnabled(uint32 flags) ) library: RaylibLibrary.
 
 ]
 
@@ -2654,7 +2654,7 @@ RaylibFFI >> setPixelColor: dstPtr color: color format: format [
 
 { #category : 'rcore' }
 RaylibFFI >> setRandomSeed: intSeed [
-	self ffiCall: #( void SetRandomSeed(unsigned int intSeed) ) library: RaylibLibrary.
+	self ffiCall: #( void SetRandomSeed(uint32 intSeed) ) library: RaylibLibrary.
 ]
 
 { #category : 'rcore' }
@@ -2795,7 +2795,7 @@ RaylibFFI >> setWindowSize: intWidth height: intHeight [
 
 { #category : 'rcore' }
 RaylibFFI >> setWindowState: intFlags [
-	self ffiCall: #( bool SetWindowState(unsigned int intFlags) ) library: RaylibLibrary.
+	self ffiCall: #( bool SetWindowState(uint32 intFlags) ) library: RaylibLibrary.
 ]
 
 { #category : 'rcore' }
@@ -2893,7 +2893,7 @@ RaylibFFI >> textJoin: textList count: count delimiter: delimiter [
 
 { #category : 'rcore' }
 RaylibFFI >> textLength: text [
-    ^self ffiCall: #( unsigned int TextLength(const char *text) ) library: RaylibLibrary.
+    ^self ffiCall: #( uint32 TextLength(const char *text) ) library: RaylibLibrary.
 
 ]
 
@@ -2987,7 +2987,7 @@ RaylibFFI >> unloadDroppedFiles: files [
 
 { #category : 'rcore' }
 RaylibFFI >> unloadFileData: data [
-    self ffiCall: #( void UnloadFileData(unsigned char *data) ) library: RaylibLibrary.
+    self ffiCall: #( void UnloadFileData(uchar *data) ) library: RaylibLibrary.
 
 ]
 
