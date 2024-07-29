@@ -1951,7 +1951,7 @@ RaylibFFI >> isGamepadButtonUp: gamepad button: button [
 
 { #category : 'rcore' }
 RaylibFFI >> isGestureDetected: gesture [
-    ^self ffiCall: #( bool IsGestureDetected(unsigned int gesture) ) library: RaylibLibrary.
+    ^self ffiCall: #( bool IsGestureDetected(uint32 gesture) ) library: RaylibLibrary.
 
 ]
 
