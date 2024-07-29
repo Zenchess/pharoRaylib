@@ -2341,7 +2341,7 @@ RaylibFFI >> loadSoundFromWave: wave [
 
 { #category : 'rcore' }
 RaylibFFI >> loadTexture: fileName [
-    ^self ffiCall: #( RaylibTexture2D LoadTexture(const char *fileName) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibTexture LoadTexture(const char *fileName) ) library: RaylibLibrary.
 
 ]
 
