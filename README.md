@@ -2,7 +2,7 @@
 Pharo Smalltalk bindings for Raylib game library
 
 # Update: 
-Everything is almost working, however some calls to RaylibTexture2D need to be renamed to RaylibTexture.   
+Everything might be working, further tests needed   
 
 
 # Constants
