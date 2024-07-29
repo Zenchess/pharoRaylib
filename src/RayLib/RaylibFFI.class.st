@@ -137,7 +137,7 @@ RaylibFFI >> checkCollisionSpheres: center1 radius1: radius1 center2: center2 ra
 
 { #category : 'rcore' }
 RaylibFFI >> clearBackground: raylibColor [
-	self ffiCall: #( void ClearBackground(Color raylibColor) ) library: RaylibLibrary.
+	self ffiCall: #( void ClearBackground(RaylibColor raylibColor) ) library: RaylibLibrary.
 ]
 
 { #category : 'rcore' }
