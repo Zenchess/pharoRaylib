@@ -270,19 +270,19 @@ RaylibFFI >> disableEventWaiting [
 
 { #category : 'rcore' }
 RaylibFFI >> drawBillboard: camera texture: texture position: position size: size tint: tint [
-    self ffiCall: #( void DrawBillboard(RaylibCamera3D camera, RaylibTexture2D texture, RaylibVector3 position, float size, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawBillboard(RaylibCamera3D camera, RaylibTexture texture, RaylibVector3 position, float size, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> drawBillboardPro: camera texture: texture source: source position: position up: up size: size origin: origin rotation: rotation tint: tint [
-    self ffiCall: #( void DrawBillboardPro(RaylibCamera3D camera, RaylibTexture2D texture, RaylibRectangle source, RaylibVector3 position, RaylibVector3 up, RaylibVector2 size, RaylibVector2 origin, float rotation, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawBillboardPro(RaylibCamera3D camera, RaylibTexture texture, RaylibRectangle source, RaylibVector3 position, RaylibVector3 up, RaylibVector2 size, RaylibVector2 origin, float rotation, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> drawBillboardRec: camera texture: texture source: source position: position size: size tint: tint [
-    self ffiCall: #( void DrawBillboardRec(RaylibCamera3D camera, RaylibTexture2D texture, RaylibRectangle source, RaylibVector3 position, RaylibVector2 size, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawBillboardRec(RaylibCamera3D camera, RaylibTexture texture, RaylibRectangle source, RaylibVector3 position, RaylibVector2 size, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
@@ -732,37 +732,37 @@ RaylibFFI >> drawTextPro: font text: text position: position origin: origin rota
 
 { #category : 'rcore' }
 RaylibFFI >> drawTexture: texture posX: posX posY: posY tint: tint [
-    self ffiCall: #( void DrawTexture(RaylibTexture2D texture, int posX, int posY, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawTexture(RaylibTexture texture, int posX, int posY, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> drawTextureEx: texture position: position rotation: rotation scale: scale tint: tint [
-    self ffiCall: #( void DrawTextureEx(RaylibTexture2D texture, RaylibVector2 position, float rotation, float scale, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawTextureEx(RaylibTexture texture, RaylibVector2 position, float rotation, float scale, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> drawTextureNPatch: texture nPatchInfo: nPatchInfo dest: dest origin: origin rotation: rotation tint: tint [
-    self ffiCall: #( void DrawTextureNPatch(RaylibTexture2D texture, RaylibNPatchInfo nPatchInfo, RaylibRectangle dest, RaylibVector2 origin, float rotation, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawTextureNPatch(RaylibTexture texture, RaylibNPatchInfo nPatchInfo, RaylibRectangle dest, RaylibVector2 origin, float rotation, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> drawTexturePro: texture source: source dest: dest origin: origin rotation: rotation tint: tint [
-    self ffiCall: #( void DrawTexturePro(RaylibTexture2D texture, RaylibRectangle source, RaylibRectangle dest, RaylibVector2 origin, float rotation, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawTexturePro(RaylibTexture texture, RaylibRectangle source, RaylibRectangle dest, RaylibVector2 origin, float rotation, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> drawTextureRec: texture source: source position: position tint: tint [
-    self ffiCall: #( void DrawTextureRec(RaylibTexture2D texture, RaylibRectangle source, RaylibVector2 position, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawTextureRec(RaylibTexture texture, RaylibRectangle source, RaylibVector2 position, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> drawTextureV: texture position: position tint: tint [
-    self ffiCall: #( void DrawTextureV(RaylibTexture2D texture, RaylibVector2 position, RaylibColor tint) ) library: RaylibLibrary.
+    self ffiCall: #( void DrawTextureV(RaylibTexture texture, RaylibVector2 position, RaylibColor tint) ) library: RaylibLibrary.
 
 ]
 
@@ -1057,7 +1057,7 @@ RaylibFFI >> genMeshTorus: radius size: size radSeg: radSeg sides: sides [
 
 { #category : 'rcore' }
 RaylibFFI >> genTextureMipmaps: texture [
-    self ffiCall: #( void GenTextureMipmaps(RaylibTexture2D *texture) ) library: RaylibLibrary.
+    self ffiCall: #( void GenTextureMipmaps(RaylibTexture *texture) ) library: RaylibLibrary.
 
 ]
 
@@ -2076,7 +2076,7 @@ RaylibFFI >> isSoundReady: sound [
 
 { #category : 'rcore' }
 RaylibFFI >> isTextureReady: texture [
-    ^self ffiCall: #( bool IsTextureReady(RaylibTexture2D texture) ) library: RaylibLibrary.
+    ^self ffiCall: #( bool IsTextureReady(RaylibTexture texture) ) library: RaylibLibrary.
 
 ]
 
@@ -2236,7 +2236,7 @@ RaylibFFI >> loadImageFromScreen [
 
 { #category : 'rcore' }
 RaylibFFI >> loadImageFromTexture: texture [
-    ^self ffiCall: #( RaylibImage LoadImageFromTexture(RaylibTexture2D texture) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibImage LoadImageFromTexture(RaylibTexture texture) ) library: RaylibLibrary.
 
 ]
 
@@ -2353,7 +2353,7 @@ RaylibFFI >> loadTextureCubemap: image layout: layout [
 
 { #category : 'rcore' }
 RaylibFFI >> loadTextureFromImage: image [
-    ^self ffiCall: #( RaylibTexture2D LoadTextureFromImage(RaylibImage image) ) library: RaylibLibrary.
+    ^self ffiCall: #( RaylibTexture LoadTextureFromImage(RaylibImage image) ) library: RaylibLibrary.
 
 ]
 
@@ -2618,7 +2618,7 @@ RaylibFFI >> setMasterVolume: volume [
 
 { #category : 'rcore' }
 RaylibFFI >> setMaterialTexture: material mapType: mapType texture: texture [
-    self ffiCall: #( void SetMaterialTexture(RaylibMaterial *material, int mapType, RaylibTexture2D texture) ) library: RaylibLibrary.
+    self ffiCall: #( void SetMaterialTexture(RaylibMaterial *material, int mapType, RaylibTexture texture) ) library: RaylibLibrary.
 
 ]
 
@@ -2691,7 +2691,7 @@ self ffiCall: #( void SetShaderValueV(RaylibShader raylibShader, int locIndex, c
 
 { #category : 'rcore' }
 RaylibFFI >> setShapesTexture: texture source: source [
-    self ffiCall: #( void SetShapesTexture(RaylibTexture2D texture, RaylibRectangle source) ) library: RaylibLibrary.
+    self ffiCall: #( void SetShapesTexture(RaylibTexture texture, RaylibRectangle source) ) library: RaylibLibrary.
 
 ]
 
@@ -2726,13 +2726,13 @@ RaylibFFI >> setTextLineSpacing: spacing [
 
 { #category : 'rcore' }
 RaylibFFI >> setTextureFilter: texture filter: filter [
-    self ffiCall: #( void SetTextureFilter(RaylibTexture2D texture, int filter) ) library: RaylibLibrary.
+    self ffiCall: #( void SetTextureFilter(RaylibTexture texture, int filter) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> setTextureWrap: texture wrap: wrap [
-    self ffiCall: #( void SetTextureWrap(RaylibTexture2D texture, int wrap) ) library: RaylibLibrary.
+    self ffiCall: #( void SetTextureWrap(RaylibTexture texture, int wrap) ) library: RaylibLibrary.
 
 ]
 
@@ -3093,7 +3093,7 @@ RaylibFFI >> unloadSoundAlias: alias [
 
 { #category : 'rcore' }
 RaylibFFI >> unloadTexture: texture [
-    self ffiCall: #( void UnloadTexture(RaylibTexture2D texture) ) library: RaylibLibrary.
+    self ffiCall: #( void UnloadTexture(RaylibTexture texture) ) library: RaylibLibrary.
 
 ]
 
@@ -3159,13 +3159,13 @@ RaylibFFI >> updateSound: sound data: data sampleCount: sampleCount [
 
 { #category : 'rcore' }
 RaylibFFI >> updateTexture: texture pixels: pixels [
-    self ffiCall: #( void UpdateTexture(RaylibTexture2D texture, const void *pixels) ) library: RaylibLibrary.
+    self ffiCall: #( void UpdateTexture(RaylibTexture texture, const void *pixels) ) library: RaylibLibrary.
 
 ]
 
 { #category : 'rcore' }
 RaylibFFI >> updateTextureRec: texture rec: rec pixels: pixels [
-    self ffiCall: #( void UpdateTextureRec(RaylibTexture2D texture, RaylibRectangle rec, const void *pixels) ) library: RaylibLibrary.
+    self ffiCall: #( void UpdateTextureRec(RaylibTexture texture, RaylibRectangle rec, const void *pixels) ) library: RaylibLibrary.
 
 ]
 

@@ -35,7 +35,7 @@ BunnyMark class >> startDemoWindowed [
 
 { #category : 'accessing' }
 BunnyMark >> processInput [
-	(rl isMouseButtonDown: MOUSE_LEFT_BUTTON)
+	(rl isMouseButtonDown: MOUSE_BUTTON_LEFT )
 		ifTrue: 
 			[1 to: 10
 				do: 
